@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Co-Registration | DealtoAir</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!--CSS Plugins-->
+  <link rel="stylesheet" href="css/plugin.css">
+  <!-- Default CSS-->
+  <link rel="stylesheet" href="css/default.css">
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!--FontAwesome CSS-->
+  <link rel="stylesheet" href="icons/font-awesome.min.css">
+</head>
+<body>
+<!--Header Section start-->
+<header class="main_header_area position-absolute w-100">
+
+  <div class="header-content text-white">
+    <div class="container">
+      <div class="header-content-inner py-2">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="social-links ">
+              <ul class="m-0 p-0">
+                <li class="d-inline"><a href="#"><i class="fa fa-facebook border-social rounded-circle text-center"></i></a></li>
+                <li class="d-inline"><a href="#"><i class="fa fa-twitter border-social rounded-circle text-center"></i></a></li>
+                <li class="d-inline"><a href="#"><i class="fa fa-google border-social rounded-circle text-center"></i></a></li>
+                <li class="d-inline"><a href="#"><i class="fa fa-instagram border-social rounded-circle text-center"></i></a></li>
+                <li class="d-inline"><a href="#"><i class="fa fa-youtube-play border-social rounded-circle text-center"></i></a></li>
+              </ul>
+            </div>
+          </div>  
+          <div class="col-lg-6">
+            <div class="header-event-info text-end">
+              <ul class="m-0 p-0">
+                <li class="px-2 border-end border-lightgrey border-opacity-50 d-inline"><i class="fa fa-phone pe-1"></i><small>+33 877 554 332</small></li>
+                <li class="px-2 border-end d-inline border-lightgrey border-opacity-50"><i class="fa fa-envelope-o pe-1"></i><small>info@website.com</small></li>
+                <li class="px-2 d-inline"><i class="fa fa-clock-o pe-1"></i><small>Mon - Fri: 9:00 - 18:30</small></li>
+              </ul>
+            </div>
+          </div>  
+        </div>  
+      </div>  
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="header_menu " id="header_menu">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg py-2">
+        <div class="row">
+          <div class="col-lg-2 col-md-6">
+            <div class="navbar-brand m-0">
+              <a href="./"><img src="images/logo/Dealtoair_Logo.png" alt="Logo" class="w-100"></a>
+            </div>
+          </div>
+          <div id="slicknav-mobile"></div>
+        </div>
+      </nav>
+    </div> 
+  </div>
+</header>
+<!-- Header section ends -->
+
+<!-- Banner Section -->
+<section class="banner position-relative pb-0" style="height: 500px;">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="inner-banner position-relative text-white text-center py-5">
+      <h1 class="text-white">Welcome to DealtoAir</h1>
+      <p class="lead">Exclusive Co-Registration Offers Just for You</p>
+    </div>
+  </div>
+</section>
+<!-- Banner Section End -->
+
+<!-- Offer Carousel Section -->
+<section class="offers py-5 ">
+  <div class="container">
+    <div id="offer-container" class="text-center">
+      <!-- Offer content will be injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- Back-to-top Button start -->
+<div id="back-to-top">
+  <a href="#" class="bg-pink position-relative align-items-center rounded-circle d-block"></a>
+</div>
+<!-- Back-to-top Button end -->
+
+<script src="js/jquery-3.7.1.min.js"></script>  
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/custom-nav.js"></script>
+<script src="js/plugin.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+  // Offers Array
+  const offers = [
+    {
+      img: "images/offers/offer1.png",
+      title: "Special Offer 1",
+      desc: "Get 20% off on your first subscription!",
+      yesText: "Yes, Claim Offer",
+      noText: "No, Skip",
+      yesLink: "https://example.com/offer1",
+      noLink: ""
+    },
+    {
+      img: "images/offers/offer2.png",
+      title: "Special Offer 2",
+      desc: "Win a free gift card by joining today!",
+      yesText: "Yes, Enter",
+      noText: "No, Maybe Later",
+      yesLink: "https://example.com/offer2",
+      noLink: ""
+    },
+    {
+      img: "images/offers/offer3.png",
+      title: "Special Offer 3",
+      desc: "Exclusive access to our premium features!",
+      yesText: "Yes, Unlock Now",
+      noText: "No, Thanks",
+      yesLink: "https://example.com/offer3",
+      noLink: ""
+    }
+  ];
+
+  let currentOffer = 0;
+
+  function renderOffer(index) {
+    if (index >= offers.length) {
+      document.getElementById("offer-container").innerHTML =
+        `<div class="p-5">
+           <h2 class="text-success">🎉 Thank You!</h2>
+           <p>You’ve completed all offers.</p>
+         </div>`;
+      return;
+    }
+
+    const offer = offers[index];
+    document.getElementById("offer-container").innerHTML = `
+      <div class="card shadow p-4 mx-auto" style="max-width:600px;">
+        <img src="${offer.img}" class="w-50 mx-auto mb-3" alt="Offer Image">
+        <h3 class="mb-3">${offer.title}</h3>
+        <p class="mb-4">${offer.desc}</p>
+        <div class="d-flex justify-content-center gap-3">
+          <button class="btn btn-success px-4" onclick="nextOffer('${offer.yesLink}')">${offer.yesText}</button>
+          <button class="btn btn-danger px-4" onclick="nextOffer('${offer.noLink}')">${offer.noText}</button>
+        </div>
+      </div>
+    `;
+  }
+
+  function nextOffer(link) {
+    if (link) {
+      window.open(link, "_blank"); // open yes-link in new tab
+    }
+    currentOffer++;
+    renderOffer(currentOffer);
+  }
+
+  // Initialize first offer
+  renderOffer(currentOffer);
+</script>
+</body>
+</html>

@@ -60,7 +60,7 @@
 }
 
 .fixed-top {
-  background-color: #1c1d66;
+  background-color: #7e7fc0 !important;
 }
 
 @media (min-width: 992px) {
