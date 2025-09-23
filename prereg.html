@@ -166,23 +166,19 @@
 Submit your details now and you could be the next lucky winner!</p>
               </div>
               <div class="form-content justify-content-between">
-                <form action="coreg.html">
-                  <input type="text" placeholder="Full Name" class="mb-5">
-                  <div class=" row justify-content-around">
-                    <div class="col-lg-6 col-md-6">
-                      <div class="zip">
-                        <input type="tel" placeholder="zip" class="mb-5">
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                      <div class="email">
-                        <input type="email" placeholder="Email Address" class="mb-5" required>
-                      </div>
-                    </div>
-                  </div>
-                  <textarea placeholder="Address" rows="4" class="mb-5" required></textarea>
-                  <button class="btn mb-5" id="sub-btn">SEND MESSAGE</button>
-                </form>
+                <form action="forms/prereg.php" method="POST">
+  <input type="text" name="full_name" placeholder="Full Name" class="mb-5" required>
+  <div class="row justify-content-around">
+    <div class="col-lg-6 col-md-6">
+      <input type="tel" name="zip" placeholder="Zip" class="mb-5">
+    </div>
+    <div class="col-lg-6 col-md-6">
+      <input type="email" name="email" placeholder="Email Address" class="mb-5" required>
+    </div>
+  </div>
+  <textarea name="address" placeholder="Address" rows="4" class="mb-5" required></textarea>
+  <button class="btn mb-5" id="sub-btn">SEND MESSAGE</button>
+</form>
                 <small>*By submitting this form, you authorize DealtoAir to collect and process the information you provide. We may use your details to contact you with offers, updates, and other relevant communications. Please note that your data will be handled in accordance with our strict <a href="privacy.html" class="text-blue"><b>Privacy Policy</b></a>. By proceeding, you confirm that you have read and agree to DealtoAir’s <a href="terms.html" class="text-blue"><b>Terms & Conditions</b></a>.</small>
               </div>
             </div>
